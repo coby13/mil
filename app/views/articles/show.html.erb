@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="large-3 columns">
+	<div class= "white">
+	<% @categoryarticles.each do |article| %>
+	<ul class="side-nav">
+	  <li><%= link_to_unless_current article.title, article %></li>
+	</ul>
+	    
+	  
+	<% end %>
+	
+	</div>
+	<div class= "white">
+
+		<a href="#" data-reveal-id="myModal"><%=t('request')%></a>
+		
+		</div>
+	</div>
+  <div class="large-9 columns">
+	<div class= "white">
+
+
+	  <%= raw@article.content %>
+	</p>
+
+	<p>
+	  <b>Category:</b>
+	  <%= @article.category_id %>
+	</p>
+	<%= link_to 'Edit', edit_article_path(@article) %> |
+	<%= link_to 'Back', articles_path %>
+	</div>
+	</div>
+</div>
+
+<div id="myModal" class="reveal-modal large">
+	<p>Fill the form and soon one of us will call you!!</p>
+	<%= simple_form_for :message, :url => contact_path do |form| %>
+	       <%= form.label t('formname') %>
+	      <%= form.text_field :name, label: 'Your username please' %>
+
+	      <%= form.text_field :email %>
+
+	      <%= form.text_field :subject %>
+
+
+	      <%= form.text_area :body %>
+
+	  <fieldset class="actions">
+	    <%= form.submit "Send" %>
+	  </fieldset>
+	<% end %>
+
+
+	</div>
+
+
+
+

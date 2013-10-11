@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="large-3 columns">
+	<div class= "white">
+	
+	
+	</div>
+	<div class= "white">
+
+		<a href="#" data-reveal-id="myModal"><%=t('request')%></a>
+		
+		</div>
+	</div>
+  <div class="large-9 columns">
+	<div class= "white">
+
+
+	  	<%= form_for @message, :url => contact_path do |form| %>
+		  <fieldset class="fields">
+		    <div class="field">
+		      <%= form.label :name %>
+		      <%= form.text_field :name %>
+		    </div>
+		    <div class="field">
+		      <%= form.label :surname %>
+		      <%= form.text_field :surname %>
+		    </div>
+
+		    <div class="field">
+		      <%= form.label :email %>
+		      <%= form.text_field :email %>
+		    </div>
+		    <div class="field">
+		      <%= form.label :subject %>
+		      <%= form.text_field :subject %>
+		    </div>
+
+		    <div class="field">
+		      <%= form.label :body %>
+		      <%= form.text_area :body %>
+		    </div>
+		  </fieldset>
+
+		  <fieldset class="actions">
+		    <%= form.submit "Send" %>
+		  </fieldset>
+		<% end %>
+	</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
